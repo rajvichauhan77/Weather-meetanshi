@@ -44,8 +44,8 @@ const WeatherDetails = ({ onBack, weatherData }) => {
     };
 
     return (
-        <div className="w-full max-w-full mx-auto pt-8 pb-16 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 items-start w-full">
+        <div className="w-full max-w-full mx-auto px-4 h-screen flex flex-col justify-center overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 items-start w-full pt-10">
 
                 {/* LEFT COLUMN - Slides in from left */}
                 <div className="flex flex-col gap-6 order-2 lg:order-1 animate-slide-left">
@@ -94,17 +94,17 @@ const WeatherDetails = ({ onBack, weatherData }) => {
 
                     {/* Three Parts Temp Grid */}
                     <div className="grid grid-cols-3 gap-4 w-full">
-                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105 h-36">
+                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105">
                             <Cloud className="absolute -right-4 -bottom-4 w-20 h-20 text-blue-400/15 rotate-12" />
                             <span className="text-[11px] font-black text-blue-600 mb-1 z-10 uppercase tracking-widest text-center">Atmosphere <br /> Now</span>
                             <span className="text-3xl font-black text-gray-900 z-10">{data.current}°</span>
                         </div>
-                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105 h-36">
+                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105">
                             <Thermometer className="absolute -right-4 -bottom-4 w-20 h-20 text-indigo-400/15 -rotate-12" />
                             <span className="text-[11px] font-black text-indigo-500 mb-1 z-10 uppercase tracking-widest text-center">Minimum <br /> Record</span>
                             <span className="text-3xl font-black text-gray-900 z-10">{data.min}°</span>
                         </div>
-                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105 h-36">
+                        <div className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-[1.8rem] p-6 flex flex-col items-center justify-center border border-white/30 shadow-sm transition-transform hover:scale-105">
                             <Sun className="absolute -right-4 -bottom-4 w-20 h-20 text-orange-400/15 rotate-45" />
                             <span className="text-[11px] font-black text-orange-500 mb-1 z-10 uppercase tracking-widest text-center">Maximum <br /> Reach</span>
                             <span className="text-3xl font-black text-gray-900 z-10">{data.max}°</span>
@@ -139,7 +139,7 @@ const WeatherDetails = ({ onBack, weatherData }) => {
                 {/* RIGHT COLUMN - Slides in from right */}
                 <div className="flex flex-col gap-6 order-3 lg:order-3 animate-slide-right">
                     {/* Solar Cycle */}
-                    <div className="bg-blue-600/50 border border-white/30 backdrop-blur-xl rounded-[3rem] p-6 flex flex-col justify-between min-h-[180px] shadow-2xl transition-all hover:scale-[1.02]">
+                    <div className="bg-blue-600/50 border border-white/30 backdrop-blur-xl rounded-[3rem] p-6 flex flex-col justify-between shadow-2xl transition-all hover:scale-[1.02]">
                         <div className="flex justify-between items-center mb-3">
                             <span className="text-[12px] font-black uppercase tracking-widest text-blue-100/70">Solar Cycle</span>
                             <div className="bg-white/20 p-2 rounded-xl"><Sun className="w-5 h-5 text-white" /></div>
@@ -168,7 +168,7 @@ const WeatherDetails = ({ onBack, weatherData }) => {
                     </div>
 
                     {/* Stats Box */}
-                    <div className="bg-blue-600/50 border border-white/30 backdrop-blur-xl rounded-[3rem] p-8 text-white shadow-3xl flex flex-col gap-8 min-h-[400px]">
+                    <div className="bg-blue-600/50 border border-white/30 backdrop-blur-xl rounded-[3rem] p-8 text-white shadow-3xl flex flex-col gap-8">
                         <div className="flex justify-between items-center">
                             <span className="text-[14px] font-black uppercase tracking-widest text-blue-100/70">Weather Metrics</span>
                             <Navigation className="w-5 h-5 text-blue-200 fill-blue-200/20" />
@@ -180,7 +180,7 @@ const WeatherDetails = ({ onBack, weatherData }) => {
                                 { label: "UV Intensity", val: data.stats.uvIndex.split(' ')[0], icon: Zap, color: "text-yellow-300" },
                                 { label: "Visibility", val: data.stats.visibility, icon: Eye, color: "text-blue-100" }
                             ].map((stat, i) => (
-                                <div key={i} className="relative overflow-hidden bg-white/15 rounded-[1.8rem] px-5 py-3 border border-white/20 shadow-lg flex flex-col justify-between h-28 transition-transform hover:scale-[1.03]">
+                                <div key={i} className="relative overflow-hidden bg-white/15 rounded-[1.8rem] px-5 py-3 border border-white/20 shadow-lg flex flex-col justify-between transition-transform hover:scale-[1.03]">
                                     <Cloud className="absolute -right-3 -bottom-3 w-16 h-16 text-white/5 rotate-12" />
                                     <div className="flex justify-between items-center mb-1 z-10">
                                         <span className="text-[13px] font-black uppercase tracking-widest text-white/60">{stat.label}</span>
