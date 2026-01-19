@@ -61,7 +61,7 @@ const WeatherDetails = ({ onBack, weatherData }) => {
                                 {data.type}
                             </span>
                             <p className="text-gray-500 font-bold text-base md:text-lg max-w-sm leading-relaxed px-6 text-center italic">
-                                "{data.description}"
+                                {data.description}
                             </p>
                         </div>
 
@@ -125,8 +125,6 @@ const WeatherDetails = ({ onBack, weatherData }) => {
                         </div>
 
                         <div className="flex flex-col items-center gap-2 mt-12 py-12 px-8 rounded-[3rem] ">
-                            <span className="text-[14px] uppercase font-black tracking-[0.8em] text-gray-600/60 mb-4 block">Main Condition</span>
-
                             <div className="relative font-black text-gray-900 leading-none tracking-tighter flex items-end select-none">
                                 <div className="flex items-start">
                                     <span className="text-[11rem]">{data.current}</span>
